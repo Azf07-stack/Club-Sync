@@ -10,7 +10,7 @@ export default function EventResult() {
   const [activeTab, setActiveTab] = useState('overview');
 
   useEffect(() => {
-    axios.get(`asif/api/events/${id}`).then(res => setData(res.data));
+    axios.get(`https://club-sync-backend.onrender.com/api/events/${id}`).then(res => setData(res.data));
   }, [id]);
 
   if (!data) return <div className="p-10 font-mono text-sm font-bold text-slate-500 animate-pulse uppercase tracking-widest">Fetching Data...</div>;

@@ -12,7 +12,7 @@ export default function Dashboard() {
   }, []);
 
   const fetchEvents = () => {
-    axios.get('asif/api/events').then(res => setEvents(res.data));
+    axios.get('https://club-sync-backend.onrender.com/api/events').then(res => setEvents(res.data));
   };
 
   const handleDelete = async (e, id) => {
@@ -20,7 +20,7 @@ export default function Dashboard() {
     if (!window.confirm("Are you sure you want to delete this event?")) return;
     
     try {
-      await axios.delete(`asif/api/events/${id}`);
+      await axios.delete(`https://club-sync-backend.onrender.com/api/events/${id}`);
       setEvents(events.filter(event => event.id !== id));
       toast.success("Event deleted successfully");
     } catch (error) {

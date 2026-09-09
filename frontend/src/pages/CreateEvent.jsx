@@ -44,7 +44,7 @@ export default function CreateEvent() {
     setLoadingStepIndex(0);
 
     try {
-      const response = await axios.post('asif/api/events/generate', formData);
+      const response = await axios.post('https://club-sync-backend.onrender.com/api/events/generate', formData);
       toast.success('Event planned successfully!');
       navigate(`/events/${response.data.id}`);
     } catch (error) {
